@@ -27,11 +27,11 @@ const customConfig = defineConfig({
         primary: {
         //   950: {value: '#3886DE'},
           500: {value: 'rgba(0, 227, 255, 1)'},
-        //   200: {value: '#E2EDFA'},
         //   100: {value: 'rgb(245, 249, 253)'}
         },
         secondary: {
           500: {value: 'rgba(20, 31, 51, 1)'},
+          400: {value: 'rgba(34, 49, 77, 1)'},
           300: {value: 'rgba(59, 92, 153, 1)'}
         },
         tertiarity: {
