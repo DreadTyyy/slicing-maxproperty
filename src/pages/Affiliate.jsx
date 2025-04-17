@@ -33,19 +33,27 @@ const Affiliate = () => {
       </Box>
       <Flex
         flexDir='column'
+        h='100vh'
+        maxH={{ base:'100%', xl: '100vh' }}
         minH='100vh'
-        // pt={{base:'60px', xl: '0'}}
-        pb={{ base: '80px', xl: '0' }}
-        w='full'
+        pt={{base:'60px', xl: '0'}}
+        pb={{ base: '60px', md:'110px', xl: '0' }}
+        flex={1}
         bg='secondary.400'
+        overflowX='hidden'
+        overflowY='hidden'
       >
         <DashboardHeader title='Affiliate' />
         <Box
-          py={{ base:'24px','2xl':'42px' }}
+          pt={{ base:'24px','2xl':'42px' }}
           pl={{ base:'5%',xl:'32px','2xl':'64px' }}
           pr={{ base:'5%',xl:'32px' }}
         >
-          <Flex gap={{ base:'16px',xl:'24px' }} mb={{ base:'26px',xl:'32px' }} h={{ base:'42px','2xl':'48px' }}>
+          <Flex 
+            gap={{ base:'16px',xl:'24px' }} 
+            mb={{ base:'20px', md:'26px',xl:'32px' }} 
+            h={{ base:'42px',xl:'48px','2xl':'64px' }}
+          >
             <Input 
               name='address'
               placeholder='Address'
@@ -57,7 +65,7 @@ const Affiliate = () => {
               fontSize={{ base:'0.8rem', xl:'1rem', '2xl':'1.2rem' }}
               color='white'
               rounded='full'
-              px={{ base:'40px','2xl':'56px' }}
+              px={{ base:'20px',md:'40px','2xl':'56px' }}
               h='full'
               maxW='560px'
               _placeholder={{ 
@@ -79,7 +87,17 @@ const Affiliate = () => {
               Find
             </Text>
           </Flex>
-          <Box className='local-scrollbar dir-ltr' pr='16px' maxH={{ base: '422px', xl: '439px','2xl':"535px" }} overflowY="auto" textAlign='center'>
+        </Box>
+          <Box 
+            className='local-scrollbar dir-ltr' 
+            pr={{ base:'0', xl:'16px' }} 
+            pl={{ base:'5%',xl:'32px','2xl':'64px' }}
+            mr={{ base:'5%',xl:'32px' }}
+            flex={1}
+            maxH={{ base: '480px', xl: 'full' }} 
+            overflowY="auto" 
+            textAlign='center'
+          >
           {/* (6 child) Set height: 422px 439px  535px*/}
           {/* Header */}
           <Box
@@ -147,7 +165,6 @@ const Affiliate = () => {
             </Grid>
           ))}
           </Box>
-        </Box>
       </Flex>
       <Box display={{ base: 'block', xl:'none' }}>
         <BottomNavBar />

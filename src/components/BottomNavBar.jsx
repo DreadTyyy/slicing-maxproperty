@@ -5,7 +5,7 @@ const BottomNavBar = () => {
   const icons = {
       dashboard: 'dashboard_root.png',
       buy_nft: 'bag.png',
-      rewards: 'rewards_root.png',
+      earning: 'earning_root.png',
       collection: 'collection_root.png',
   } 
   return (
@@ -21,16 +21,16 @@ const BottomNavBar = () => {
       w='full'
       h={{ base:'50px', md: '100px' }}
       >
-        <Link to='/'>
+        <Link to='/dashboard'>
           <Image src={`/icons/${icons.dashboard}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
-        <Link to='/'>
+        <Link to='/market'>
           <Image src={`/icons/${icons.buy_nft}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
-        <Link to='/'>
-          <Image src={`/icons/${icons.rewards}`} h={{ base:'20px', md:'28px' }}/>
+        <Link to='/earning'>
+          <Image src={`/icons/${icons.earning}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
-        <Link to='/'>
+        <Link to='/collection'>
           <Image src={`/icons/${icons.collection}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
     </Box>

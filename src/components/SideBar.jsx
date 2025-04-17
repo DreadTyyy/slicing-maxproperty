@@ -10,7 +10,7 @@ const SideBar = ({active}) => {
     const icons = {
       dashboard: ['dashboard_active.png', 'dashboard_root.png'],
       affiliate: ['affiliate_active.png', 'affiliate_root.png'],
-      buy_nft: ['buy_nft_active.png', 'buy_nft_root.png'],
+      buy_nft: ['buy_nft__active.png', 'buy_nft_root.png'],
       earning: ['earning_active.png', 'earning_root.png'],
       rewards: ['rewards_active.png', 'rewards_root.png'],
       collection: ['collection_active.png', 'collection_root.png'],
@@ -25,6 +25,7 @@ const SideBar = ({active}) => {
       <Box 
         zIndex={999999999}
         display='flex'
+        position='fixed'
         flexDir={{ base: 'row', xl:'column' }}
         justifyContent='space-between'
         alignItems={{ base: 'center', xl: 'normal' }}
@@ -43,19 +44,19 @@ const SideBar = ({active}) => {
           <Link to='/affiliate'>
             <ButtonSideBar icon={active == 'affiliate' ? icons.affiliate[0]:icons.affiliate[1]} status={active == 'affiliate' ? 'active':'root'} title='Affiliate' />
           </Link>
-          <Link to=''>
+          <Link to='/market'>
             <ButtonSideBar icon={active == 'buy_nft' ? icons.buy_nft[0]:icons.buy_nft[1]} status={active == 'buy_nft' ? 'active':'root'} title='Buy NFT' />
           </Link>
-          <Link to=''>
+          <Link to='/earning'>
             <ButtonSideBar icon={active == 'earning' ? icons.earning[0]:icons.earning[1]} status={active == 'earning' ? 'active':'root'} title='Earning' />
           </Link>
-          <Link to=''>
+          <Link to='/rewards'>
             <ButtonSideBar icon={active == 'rewards' ? icons.rewards[0]:icons.rewards[1]} status={active == 'rewards' ? 'active':'root'} title='Rewards' />
           </Link>
-          <Link to=''>
+          <Link to='/collection'>
             <ButtonSideBar icon={active == 'collection' ? icons.collection[0]:icons.collection[1]} status={active == 'collection' ? 'active':'root'} title='Collection' />
           </Link>
-          <Link to=''>
+          <Link to='/dividend'>
             <ButtonSideBar icon={active == 'dividend_share' ? icons.dividend_share[0]:icons.dividend_share[1]} status={active == 'dividend_share' ? 'active':'root'} title='Dividend Share' />
           </Link>
           </Box>
@@ -104,13 +105,13 @@ const SideBar = ({active}) => {
             rounded='24px 0 0 24px'
             transition='all 0.3s ease-in-out'
           >
-            <Link to=''>
+            <Link to='/dividend'>
                 <ButtonSideBar icon={icons.dividend_share[1]} status={'root'} title='Dividend Share' />
             </Link>
-            <Link to=''>
+            <Link to='/rewards'>
                 <ButtonSideBar icon={icons.rewards[1]} status={'root'} title='Rewards' />
             </Link>
-            <Link to=''>
+            <Link to='/affiliate'>
                 <ButtonSideBar icon={icons.affiliate[1]} status={'root'} title='Affiliate' />
             </Link>
           </Box>

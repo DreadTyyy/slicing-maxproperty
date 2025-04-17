@@ -17,12 +17,14 @@ const Dashboard = () => {
         <SideBar active='dashboard'/>
       </Box>
       <Flex
-        flexDir='column'
-        minH='100vh'
-        // pt={{base:'60px', xl: '0'}}
-        pb={{ base: '80px', xl: '0' }}
-        w='full'
-        bg='secondary.400'
+         flexDir='column'
+         h='100vh'
+         pt={{base:'60px', xl: '0'}}
+         pb={{ base: '60px', md:'110px', xl: '0' }}
+         flex={1}
+         bg='secondary.400'
+         overflowX='hidden'
+         overflowY='auto'
       >
         <DashboardHeader title='Dashboard' subTitle='Welcome back'/>
         <Flex
@@ -77,13 +79,13 @@ const Dashboard = () => {
                 ))}
             </DataList.Root>
             <Flex gap={{ base:'16px', xl:'32px' }} alignItems='center' justifyContent='center'>
-              <Link to='/'>
+              <Link to='/market'>
                 <Flex gap={{ base:'10px',xl:'16px' }} alignItems='center' px={{ base:'16px',xl:'20px','2xl':'40px' }} py={{ base:'12px','2xl':'20px' }} bg='primary.500' rounded='full' w='fit'>
                   <Image src='/icons/buy_nft__active.png' alt='icon buy nft'/>
                   <Text color='secondary.500' fontWeight={700} fontSize={{ base:'0.8rem', xl:'1rem','2xl':'1.25rem' }}>BUY NFT</Text>
                 </Flex>
               </Link>
-              <Link to='/'>
+              <Link to='/earning'>
                 <Flex gap={{ base:'10px',xl:'16px' }} alignItems='center' px={{ base:'16px',xl:'20px','2xl':'40px' }} py={{ base:'12px','2xl':'20px' }} border='1px solid #FFF' rounded='full' w='fit'>
                   <Image src='/icons/earning_root.png' alt='icon earning'/>
                   <Text color='white' fontWeight={700} fontSize={{ base:'0.8rem', xl:'1rem','2xl':'1.25rem' }}>START EARNING</Text>
@@ -97,7 +99,7 @@ const Dashboard = () => {
           mb={{ base: '24px','2xl':'40px' }}
           px={{ base:'5%', xl:'32px','2xl':'64px' }}
           rounded='32px'
-          h={{ base:'300px', '2xl': 'full' }}
+          h={{ base:'260px', '2xl': 'full' }}
           maxH='500px'
         >
           <Box

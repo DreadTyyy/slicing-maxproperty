@@ -1,5 +1,6 @@
 .local-scrollbar::-webkit-scrollbar {
   width: 0.6rem;
+  height: 0.6rem;
 }
 .local-scrollbar::-webkit-scrollbar-track {
   background: #FFFFFF;
@@ -13,16 +14,19 @@
   background:rgb(49, 146, 168);
 }
 
+.market-scrollbar::-webkit-scrollbar-thumb{
+  width: 10px !important;
+      // bikin thumb lebih pendek
+  marginLeft: auto;
+  marginRight: auto;
+}
+
 .local-scrollbar {
   direction: rtl;
 }
 
 .local-scrollbar.dir-ltr {
   direction: ltr;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -42,6 +46,8 @@
 @media (max-width:1024px) {
   .local-scrollbar::-webkit-scrollbar {
     width: 0px;
-    display: none;
+  }
+  .local-scrollbar.mobile-scrollbar::-webkit-scrollbar {
+    width: 0.6rem;
   }
 }
