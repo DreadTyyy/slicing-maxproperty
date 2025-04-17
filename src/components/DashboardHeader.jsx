@@ -4,7 +4,8 @@ import BtnProfil from '@/components/BtnProfil';
 const DashboardHeader = ({title, subTitle}) => {
   return (
     <Flex
-      fontFamily='Segoe UI'
+      fontFamily='Segoe UI Custom'
+      fontWeight={200}
       py={{ base:'24px','2xl':'42px' }}
       pl={{ base:'32px','2xl':'64px' }}
       pr='32px'

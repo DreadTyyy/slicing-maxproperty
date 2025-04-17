@@ -17,10 +17,12 @@ const BottomNavBar = () => {
       px={{ base: '32px', md: '64px' }} 
       bottom='0'
       left='0'
+      rounded='36px'
       bg='secondary.500' 
       w='full'
-      h={{ base:'50px', md: '100px' }}
+      h={{ base:'60px', md: '100px' }}
       >
+        <Box zIndex='-1' rounded='36px 36px 0 0' position='absolute' h='full' w='full' bg='secondary.500' top='0' left='0'></Box>
         <Link to='/dashboard'>
           <Image src={`/icons/${icons.dashboard}`} h={{ base:'20px', md:'28px' }}/>
         </Link>

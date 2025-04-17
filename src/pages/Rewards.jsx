@@ -35,8 +35,8 @@ const Rewards = () => {
       <Flex
          flexDir='column'
          h='100vh'
+         maxH={{ base:'100%', xl: '100vh' }}
          minH='100vh'
-         maxH='100%'
          pt={{base:'60px', xl: '0'}}
          pb={{ base: '60px', md:'110px', xl: '0' }}
          flex={1}
@@ -223,7 +223,8 @@ const Rewards = () => {
           mt={{ base:'24px',md:'32px' }} 
           pr={{ base:'0',xl:'16px' }} 
           pl={{ base:'5%',xl:'32px','2xl':'64px' }}
-          maxH='480px'
+          flex={1}
+          maxH={{ base: '480px', xl: 'full' }} 
           overflowY="auto" 
           textAlign='center'
         >
