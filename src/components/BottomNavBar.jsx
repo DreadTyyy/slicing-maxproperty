@@ -10,7 +10,7 @@ const BottomNavBar = () => {
   } 
   return (
     <Box 
-      position='absolute'
+      position='fixed'
       display='flex'
       justifyContent='space-between'
       alignItems='center'
@@ -19,19 +19,19 @@ const BottomNavBar = () => {
       left='0'
       bg='secondary.500' 
       w='full'
-      h={{ base:'70px', md: '100px' }}
+      h={{ base:'50px', md: '100px' }}
       >
         <Link to='/'>
-          <Image src={`/icons/${icons.dashboard}`} h={{ base:'24px', md:'28px' }}/>
+          <Image src={`/icons/${icons.dashboard}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
         <Link to='/'>
-          <Image src={`/icons/${icons.buy_nft}`} h={{ base:'24px', md:'28px' }}/>
+          <Image src={`/icons/${icons.buy_nft}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
         <Link to='/'>
-          <Image src={`/icons/${icons.rewards}`} h={{ base:'24px', md:'28px' }}/>
+          <Image src={`/icons/${icons.rewards}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
         <Link to='/'>
-          <Image src={`/icons/${icons.collection}`} h={{ base:'24px', md:'28px' }}/>
+          <Image src={`/icons/${icons.collection}`} h={{ base:'20px', md:'28px' }}/>
         </Link>
     </Box>
   )

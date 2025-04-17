@@ -1,6 +1,7 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router';
 import ButtonSideBar from '@/components/ButtonSideBar';
+import BtnProfil from '@/components/BtnProfil';
 import { FaRegCircleUser } from "react-icons/fa6";
 import { useState } from 'react';
 
@@ -22,17 +23,18 @@ const SideBar = ({active}) => {
 
     return (
       <Box 
+        zIndex={999999999}
         display='flex'
         flexDir={{ base: 'row', xl:'column' }}
         justifyContent='space-between'
         alignItems={{ base: 'center', xl: 'normal' }}
         w={{ base: 'full', xl:'260px', '2xl':'360px' }} 
-        h={{ base: '100%', xl: '100vh' }}
-        bg='secondary.500'
+        h={{ base: '60px', xl: '100vh' }}
+        bg={{base: 'secondary.400', xl:'secondary.500'}}
       >
         <Box>
           <Box px={{ base: '20px', xl:'36px' }} py='24px'>
-          <Image src='/MPRO LOGO 1 5.png' alt='logo Max Property' h={{ base: '36px', md:'56px', xl:'70px', '2xl':'99px' }}/>
+            <Image src='/MPRO LOGO 1 5.png' alt='logo Max Property' objectFit='fill' h={{ base: '100%', md:'56px', xl:'70px', '2xl':'99px' }}/>
           </Box>
           <Box display={{ base: 'none', xl: 'block' }} mt={{ base: '24px', '2xl':'74px' }}>
           <Link to='/dashboard'>
@@ -57,6 +59,9 @@ const SideBar = ({active}) => {
             <ButtonSideBar icon={active == 'dividend_share' ? icons.dividend_share[0]:icons.dividend_share[1]} status={active == 'dividend_share' ? 'active':'root'} title='Dividend Share' />
           </Link>
           </Box>
+        </Box>
+        <Box display={{ base: 'block', xl: 'none' }}>
+          <BtnProfil />
         </Box>
         <Box
           display={{ base: 'none', xl: 'flex' }}
@@ -97,7 +102,7 @@ const SideBar = ({active}) => {
             w={{ base: '140px', md: '200px' }}
             bg='secondary.500'
             rounded='24px 0 0 24px'
-            transition='all 0.2s ease-in'
+            transition='all 0.3s ease-in-out'
           >
             <Link to=''>
                 <ButtonSideBar icon={icons.dividend_share[1]} status={'root'} title='Dividend Share' />

@@ -2,6 +2,7 @@ import { Box, Flex, Text, Image, DataList } from '@chakra-ui/react';
 import { Link } from 'react-router';
 import SideBar from '@/components/SideBar';
 import BottomNavBar from '@/components/BottomNavBar';
+import DashboardHeader from '@/components/DashboardHeader';
 import '@/style/scrollbar.css';
 
 const Dashboard = () => {
@@ -17,49 +18,25 @@ const Dashboard = () => {
       </Box>
       <Flex
         flexDir='column'
-        h='100vh'
+        minH='100vh'
+        // pt={{base:'60px', xl: '0'}}
+        pb={{ base: '80px', xl: '0' }}
         w='full'
         bg='secondary.400'
       >
+        <DashboardHeader title='Dashboard' subTitle='Welcome back'/>
         <Flex
-            fontFamily='Segoe UI'
-            py={{ base:'24px','2xl':'42px' }}
-            pl={{ base:'32px','2xl':'64px' }}
-            pr='32px'
-            w='full'    
-            justifyContent='space-between'
-        >
-            <Box color='white'>
-            <Text as='h1' fontSize={{ base: '2.5rem','2xl':'4rem' }} fontWeight={350}>Dashboard</Text>
-            <Text as='p' fontSize={{ base: '1rem','2xl':'1.25rem' }} fontWeight={350}>Welcome Back</Text>
-            </Box>
-            <Flex
-                fontFamily='Inter'
-                pl='16px'
-                bg='secondary.500'
-                alignItems='center'
-                h='fit-content'
-                gap='16px'
-                rounded='full'
-            >
-            <Box bg='red.600' h={{ base: '36px','2xl':'42px' }} w={{ base: '36px','2xl':'42px' }} rounded='full' overflow='hidden'>
-                <Image src='' objectFit='cover' size='full' alt='profil'/>
-            </Box>
-            <Text fontSize={{ base: '0.8rem','2xl':'1rem' }} color='white' fontWeight={700}>
-                asdasd.................asdasdasd
-            </Text>
-            <Box bg='primary.500' px={{ base:'18px','2xl':'24px' }} rounded='full' py={{ base:'14px','2xl':'20px' }}>
-                <Text fontSize={{ base: '0.8rem','2xl':'1rem' }} color='secondary.500' fontWeight={700}>Disconnected</Text>
-            </Box>
-            </Flex>
-        </Flex>
-        <Flex
+          flexDir={{ base: 'column', xl: 'row' }}
           justifyContent='center'
           alignItems='center'
           w='full'
-          gap='100px'
+          gap={{ base:'36px', xl:'100px' }}
         >
-          <Box position="relative" w={{ base:'300px','2xl':"420px" }} h={{ base:'300px','2xl':"420px" }}>
+          <Box 
+            position="relative" 
+            w={{ base:'240px', xl:'300px','2xl':"420px" }} 
+            h={{ base:'240px', xl:'300px','2xl':"420px" }}
+          >
             <Box
                 w="full"
                 h="full"
@@ -83,12 +60,12 @@ const Dashboard = () => {
             />
           </Box>
           <Box>
-            <Text color='white' fontWeight={400} fontSize={{ base: '2rem','2xl':'2.5rem' }}>
+            <Text textAlign={{ base:'center', xl:'left' }} color='white' fontWeight={400} fontSize={{ base: '1.5rem', xl:'2rem','2xl':'2.5rem' }}>
                 General Info
             </Text>
-            <DataList.Root orientation="horizontal" mt={{ base:'16px','2xl':'32px' }} mb={{ base:'32px','2xl':'64px' }}>
+            <DataList.Root orientation="horizontal" mt={{ base:'16px','2xl':'32px' }} mb={{ base:'32px','2xl':'64px' }} placeItems={{ base:'center', xl:'start' }}>
                 {stats.map((item) => (
-                <DataList.Item key={item.label} mt={{ base:'2px','2xl':'20px' }} color='white' fontSize={{ base:'1.2rem','2xl':'1.625rem' }} fontWeight={400}>
+                <DataList.Item key={item.label} mt={{ base:'0px','2xl':'20px' }} w='fit-content' color='white' fontSize={{ base:'1rem', xl:'1.2rem','2xl':'1.625rem' }} fontWeight={400}>
                     <DataList.ItemLabel color='white'>
                     {item.label}
                     </DataList.ItemLabel>
@@ -99,17 +76,17 @@ const Dashboard = () => {
                 </DataList.Item>
                 ))}
             </DataList.Root>
-            <Flex gap='32px'>
+            <Flex gap={{ base:'16px', xl:'32px' }} alignItems='center' justifyContent='center'>
               <Link to='/'>
-                <Flex gap='16px' alignItems='center' px={{ base:'20px','2xl':'40px' }} py={{ base:'12px','2xl':'20px' }} bg='primary.500' rounded='full' w='fit'>
-                  <Image src='/icons/buy_nft__active.png'/>
-                  <Text color='secondary.500' fontWeight={700} fontSize={{ base:'1rem','2xl':'1.25rem' }}>BUY NFT</Text>
+                <Flex gap={{ base:'10px',xl:'16px' }} alignItems='center' px={{ base:'16px',xl:'20px','2xl':'40px' }} py={{ base:'12px','2xl':'20px' }} bg='primary.500' rounded='full' w='fit'>
+                  <Image src='/icons/buy_nft__active.png' alt='icon buy nft'/>
+                  <Text color='secondary.500' fontWeight={700} fontSize={{ base:'0.8rem', xl:'1rem','2xl':'1.25rem' }}>BUY NFT</Text>
                 </Flex>
               </Link>
               <Link to='/'>
-                <Flex gap='16px' alignItems='center' px={{ base:'20px','2xl':'40px' }} py={{ base:'12px','2xl':'20px' }} border='1px solid #FFF' rounded='full' w='fit'>
-                  <Image src='/icons/earning_root.png'/>
-                  <Text color='white' fontWeight={700} fontSize={{ base:'1rem','2xl':'1.25rem' }}>START EARNING</Text>
+                <Flex gap={{ base:'10px',xl:'16px' }} alignItems='center' px={{ base:'16px',xl:'20px','2xl':'40px' }} py={{ base:'12px','2xl':'20px' }} border='1px solid #FFF' rounded='full' w='fit'>
+                  <Image src='/icons/earning_root.png' alt='icon earning'/>
+                  <Text color='white' fontWeight={700} fontSize={{ base:'0.8rem', xl:'1rem','2xl':'1.25rem' }}>START EARNING</Text>
                 </Flex>
               </Link>
             </Flex>
@@ -118,13 +95,14 @@ const Dashboard = () => {
         <Box 
           mt={{ base:'32px', '2xl':'40px' }}
           mb={{ base: '24px','2xl':'40px' }}
-          px={{ base:'32px','2xl':'64px' }}
-          overflowY='hidden'
-          flex={1}
+          px={{ base:'5%', xl:'32px','2xl':'64px' }}
           rounded='32px'
+          h={{ base:'300px', '2xl': 'full' }}
+          maxH='500px'
         >
           <Box
-            px={{ base:'28px', '2xl':'56px' }}
+            px={{ base:'0px',xl:'28px', '2xl':'56px' }}
+            pr={{ base:'20px', xl:'0px' }}
             py={{ base:'24px', '2xl':'62px' }}
             h='full'
             w='full'
@@ -132,16 +110,16 @@ const Dashboard = () => {
             bgImage='linear-gradient(179.98deg, #141F33 13.15%, #3B5C99 116.26%)'
           >
             <Box
-              className='scrollbar-text-dashboard'
+              className='local-scrollbar'
               overflow='auto' 
               h='full'
               w='full'
-              textAlign='left'
+              textAlign={{ base:'center',xl:'left' }}
               pl={{ base:'28px','2xl':'40px' }}
             >
                 <Text 
                   as='h3' 
-                  fontSize={{ base:'2rem', '2xl':'2.5rem'  }}
+                  fontSize={{ base:'1.5rem', xl:'2rem', '2xl':'2.5rem'  }}
                   fontWeight={700}
                   bgImage='linear-gradient(90deg, #FFBB00 0%, #00E3FF 100%)'
                   bgClip="text"
@@ -149,7 +127,7 @@ const Dashboard = () => {
                 <Flex
                   flexDir='column'
                   gap='24px' 
-                  fontSize={{ base:'1rem','2xl':'1.5rem'  }}
+                  fontSize={{ base:'0.8rem', xl:'1rem','2xl':'1.5rem'  }}
                   fontWeight={400} 
                   mt={{ base:'10px','2xl':'24px' }}
                   bgImage='linear-gradient(89.84deg, #FDBB02 -2.44%, #67D398 98.61%)'
