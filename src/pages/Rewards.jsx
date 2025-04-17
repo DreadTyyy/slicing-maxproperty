@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Box, Text, Image, Flex, Field, InputGroup, Input, Grid } from "@chakra-ui/react";
+import { Box, Text, Image, Flex, Field, Grid } from "@chakra-ui/react";
 import SideBar from "@/components/SideBar";
 import DashboardHeader from "@/components/DashboardHeader";
 import BottomNavBar from "@/components/BottomNavBar";
+import DateInput from "@/components/DateInput";
 import { TfiDownload } from "react-icons/tfi";
-import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"
+import "react-datepicker/dist/react-datepicker.css";
 
 const items = [
     {id: 1, date:'2025-04-11 / 13:00:00', reason: 'Affiliate Reward', amount: 3, status: true},
@@ -21,29 +21,7 @@ const items = [
     {id: 9, date:'2025-04-11 / 13:00:00', reason: 'Affiliate Reward', amount: 3, status: true},
   ];
 
-const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
-    <InputGroup endElement={
-      <Text fontSize={{ base:'14px',md:'20px', '2xl':'26px' }}>
-        <FaRegCalendarAlt onClick={onClick} color='white' fontSize='1em' aria-label="Open calendar"/>
-      </Text>
-    }>
-      <Input
-        readOnly
-        value={value}
-        onClick={onClick}
-        ref={ref}
-        placeholder="Pilih tanggal"
-        border="none"
-        fontSize='1em'
-        textAlign="center"
-        bg="transparent"
-        color="white"
-        _focus={{ 
-          outline: 'none',
-        }}
-      />
-    </InputGroup>
-  ));
+
 
 const Rewards = () => {
   const [selectedStartDate, setSelectedStartDate] = useState(new Date());
@@ -195,7 +173,7 @@ const Rewards = () => {
                   <DatePicker
                     selected={selectedStartDate}
                     onChange={(date) => setSelectedStartDate(date)}
-                    customInput={<CustomDateInput />}
+                    customInput={<DateInput />}
                     dateFormat="dd-MM-yyyy"
                   />
                 </Box>
@@ -216,7 +194,7 @@ const Rewards = () => {
                   <DatePicker
                     selected={selectedEndDate}
                     onChange={(date) => setSelectedEndDate(date)}
-                    customInput={<CustomDateInput />}
+                    customInput={<DateInput />}
                     dateFormat="dd-MM-yyyy"
                   />
                 </Box>
